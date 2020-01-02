@@ -1,0 +1,20 @@
+@import "mixins/mixins";
+@import "extends/extends";
+@import "variables/variables";
+@import "fontstyles";
+@import "headerfooter";
+@import "banner";
+@import "indexpage";
+@import "faqpage";
+@import "animations/solarsystemanimation";
+@import "joinpage";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "montserrat";
+}

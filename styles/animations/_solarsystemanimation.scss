@@ -1,0 +1,85 @@
+.ani__background {
+  background-image: radial-gradient(circle at 50% 39%, #072142, #00132c 101%);
+  width: 350px;
+  height: 350px;
+  transition: width 0.5s ease-out, height 0.5s ease-out;
+  @media (min-width: 720px) {
+    width: 460px;
+    height: 460px;
+  }
+  display: grid;
+  grid: minmax(400px 1fr) / minmax(400px 1fr);
+  place-items: center;
+}
+
+@mixin square-size($size) {
+  height: $size;
+  width: $size;
+}
+
+%center {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ani__wrapper {
+  @extend %wrapper-parent;
+}
+
+.ani__img {
+  @extend %wrapped-img;
+}
+
+.sun {
+  @include square-size(40px);
+  @extend %center;
+  border-radius: 100%;
+}
+
+.orb {
+  @extend %center;
+  border: 2px dotted grey;
+  border-radius: 100%;
+  animation: move-planet linear infinite;
+}
+
+.planet {
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: -10px; //förstod efter test varför detta behövdes
+}
+
+.earth {
+  &.orb {
+    @include square-size(130px);
+    @media (min-width: 780px) {
+      @include square-size(200px);
+    }
+    animation-duration: 7s;
+  }
+
+  .planet {
+    @include square-size(20px);
+  }
+}
+
+.mars {
+  &.orb {
+    @include square-size(250px);
+    @media (min-width: 780px) {
+      @include square-size(350px);
+    }
+    animation-duration: 10s;
+  }
+
+  .planet {
+    @include square-size(20px);
+  }
+}
+
+@keyframes move-planet {
+  100% {
+    transform: rotate(360deg);
+  }
+}

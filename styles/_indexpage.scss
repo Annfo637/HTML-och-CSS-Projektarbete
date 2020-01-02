@@ -1,0 +1,94 @@
+.section__title {
+  text-align: center;
+  padding: 20px;
+}
+
+.presentation {
+  @include flex-container(column);
+  @media (min-width: 600px) {
+    @include flex-container(row-reverse);
+  }
+  & p {
+    font-weight: $normal;
+    & span {
+      font-weight: $bold;
+      color: $themecolor__2;
+    }
+  }
+  &__textwrapper {
+    @extend %wrapper-parent;
+    max-inline-size: 60%;
+  }
+  &__imgwrapper {
+    @extend %wrapper-parent;
+    max-inline-size: 40%;
+  }
+  &__img {
+    @extend %wrapped-img;
+  }
+}
+
+.facts {
+  background-color: $background--dark;
+  & h3 {
+    color: $themecolor__1;
+    padding: $pad--extra;
+    @media (min-width: 875px) {
+      padding-top: 70px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    gap: 20px;
+    @media (min-width: 875px) {
+      padding: $pad--extra;
+      grid-template: repeat(2, 1fr) / 2fr 1fr;
+    }
+  }
+  &__article {
+    background-color: $background--light;
+    box-shadow: $shadow__standard;
+    grid-column: span 1;
+    @include flex-container(column);
+    @media (min-width: 550px) {
+      @include flex-container(row);
+      &:nth-of-type(even) {
+        @include flex-container(row-reverse);
+      }
+    }
+    @media (min-width: 875px) {
+      /*solen vid sidan*/
+      @include flex-container(row);
+      /*kolla upp om man kan välja var tredje*/
+      &:nth-of-type(even) {
+        @include flex-container(column);
+        grid-row: span 2;
+      }
+    }
+  }
+  &__imgwrapper {
+    @extend %wrapper-parent;
+    inline-size: 40%;
+  }
+  &__img {
+    @extend %wrapped-img;
+    object-fit: scale-down;
+  }
+  &__mars {
+    padding: 2rem;
+  }
+  &__sun {
+    padding: 1rem;
+  }
+
+  &__textwrapper {
+    inline-size: 60%;
+    align-self: center;
+  }
+}
+
+.readmore-btn {
+  margin: 1em;
+}

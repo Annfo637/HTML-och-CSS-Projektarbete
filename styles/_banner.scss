@@ -1,0 +1,99 @@
+.banner {
+  position: relative;
+  grid-column: 1 /-1;
+  grid-row-start: 2;
+  display: grid;
+
+  &::before,
+  &::after {
+    grid-area: 1 / 1;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: $gradient__ellipse--under;
+    transition: clip-path 0.7s ease-in;
+    clip-path: ellipse(100% 55% at 95% 5%);
+    @media (min-width: 600px) {
+      clip-path: ellipse(86% 54% at 86% 0%);
+    }
+  }
+
+  &::after {
+    background: $gradient__ellipse--over;
+    clip-path: ellipse(98% 53% at 95% 5%);
+    @media (min-width: 600px) {
+      clip-path: ellipse(84% 52% at 86% 0%);
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    left: 40%;
+    z-index: 1;
+    transition: left 0.7s ease;
+    @media (min-width: 600px) {
+      left: 50%;
+    }
+  }
+  &__title {
+    &::after {
+      content: "";
+      border-bottom: 4px solid #fff;
+      block-size: 100%;
+      display: block;
+    }
+  }
+}
+
+.banner__main {
+  background: $gradient__banner, url(/project_images/page-1/hero-1.jpg);
+  background-size: cover;
+}
+
+.banner__faq {
+  background: $gradient__banner, url(/project_images/page-2/hero-2.jpg);
+  background-size: cover;
+}
+
+.banner__join {
+  background: $gradient__banner--reverse, url(/project_images/page-3/hero-3.jpg);
+  background-size: cover;
+
+  &::before,
+  &::after {
+    grid-area: 1 / 1;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: $gradient__ellipse--under2;
+    clip-path: ellipse(100% 55% at 5% 95%);
+    @media (min-width: 600px) {
+      clip-path: ellipse(86% 54% at 14% 100%);
+    }
+  }
+
+  &::after {
+    background: $gradient__ellipse--over2;
+    clip-path: ellipse(98% 53% at 5% 95%);
+    @media (min-width: 600px) {
+      clip-path: ellipse(84% 52% at 14% 100%);
+    }
+  }
+
+  & .banner__text {
+    position: absolute;
+    top: 55%;
+    right: 40%;
+    left: 10%;
+    z-index: 1;
+    transition: top 0.7s ease, right 0.7s ease;
+    @media (min-width: 600px) {
+      top: 70%;
+      right: 50%;
+    }
+  }
+}

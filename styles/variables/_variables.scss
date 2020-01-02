@@ -1,0 +1,58 @@
+/*colors*/
+$background--dark: #f1f1f1;
+$background--light: #fff;
+$background__header: #061b38;
+
+$text--dark: #323232;
+$text--light: #fff;
+
+$themecolor__1: #2c4f80;
+$themecolor__2: #e32700;
+$themecolor__3: #436dac;
+
+$footer--highlighted: #f97c7c;
+
+$shadow__standard: 0 2px 4px 0 rgba(200, 200, 200, 0.5);
+
+/*gradients*/
+$gradient__banner: linear-gradient(
+  to bottom,
+  rgba(193, 85, 85, 0.5),
+  rgba(36, 2, 2, 0.5)
+);
+$gradient__banner--reverse: linear-gradient(
+  to bottom,
+  rgba(36, 2, 2, 0.5),
+  rgba(193, 85, 85, 0.5)
+);
+$gradient__ellipse--over: linear-gradient(
+  180deg,
+  rgba(0, 19, 44, 1) 60%,
+  rgba(21, 52, 98, 0.9) 100%
+);
+$gradient__ellipse--over2: linear-gradient(
+  0deg,
+  rgba(0, 19, 44, 1) 60%,
+  rgba(21, 52, 98, 0.9) 100%
+);
+
+$gradient__ellipse--under: linear-gradient(
+  180deg,
+  rgba(21, 52, 98, 0.9) 60%,
+  rgba(94, 152, 226, 1) 100%
+);
+$gradient__ellipse--under2: linear-gradient(
+  0deg,
+  rgba(21, 52, 98, 0.9) 60%,
+  rgba(94, 152, 226, 1) 100%
+);
+
+/*font-weights*/
+$normal: 400;
+$normal--extra: 500;
+$bold: 700;
+$bold--extra: 800;
+
+/*paddings*/
+$pad--light: 1rem;
+$pad--extra: 35px;

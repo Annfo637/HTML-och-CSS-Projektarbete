@@ -1,0 +1,77 @@
+header {
+  display: grid;
+  min-block-size: 100vh;
+  min-inline-size: 100vw;
+  max-block-size: 100vh;
+  max-inline-size: 100vw;
+  grid-template: 60px 1fr / 1fr;
+}
+
+.navigation {
+  grid-column: 1 / -1;
+  grid-row: span 1;
+  @include flex-container(row);
+  justify-content: space-between;
+  background-color: $background__header;
+  max-block-size: 60px;
+  position: sticky;
+  top: 0%;
+  z-index: 10;
+}
+
+.logo__wrapper {
+  padding: 1em;
+}
+
+.logo__img {
+  width: 70px;
+  height: 40px;
+}
+
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+  &__item {
+    display: inline-block;
+    margin: 1em 0.5em;
+    margin-right: 0.8em;
+    @media (min-width: 470px) {
+      margin: 2em;
+    }
+  }
+  &__link {
+    color: $text--light;
+    font-weight: $bold;
+    transition: font-size 0.7s ease;
+    font-size: 11px;
+    @media (min-width: 800px) {
+      font-size: 14px;
+    }
+    text-decoration: none;
+    &.active {
+      &::after {
+        content: "";
+        border-bottom: 1px solid $themecolor__2;
+        block-size: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: rgb(61, 61, 114);
+  text-align: center;
+  padding: 20px;
+  & h4 {
+    padding-bottom: 10px;
+    color: white;
+  }
+  & p {
+    font-size: 8px;
+    color: white;
+    & span {
+      color: $footer--highlighted;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.section__title {
+  text-align: center;
+}
+
+.faq {
+  background-color: $background--dark;
+  & h3 {
+    color: $themecolor__1;
+    padding: $pad--extra;
+    @media (min-width: 875px) {
+      padding: 70px;
+    }
+  }
+  &__container {
+    display: grid;
+    grid-template: repeat(4, auto) / 1fr;
+    gap: 20px;
+    @media (min-width: 875px) {
+      grid-template: repeat(3, minmax(auto, 1fr)) / repeat(3, 1fr);
+    }
+  }
+
+  &__article {
+    background-color: $background--light;
+    box-shadow: $shadow__standard;
+    & .animation {
+      box-shadow: none;
+    }
+    grid-column: span 1;
+    @include flex-container(column);
+    @media (min-width: 550px) {
+      @include flex-container(row);
+      &:nth-of-type(odd) {
+        @include flex-container(row-reverse);
+      }
+    }
+    @media (min-width: 875px) {
+      /*lång text vid sidan*/
+      grid-column: span 2;
+      @include flex-container(row);
+      &:first-of-type {
+        @include flex-container(column);
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      &:last-of-type {
+        grid-column: span 3;
+      }
+    }
+  }
+  &__imgwrapper {
+    @extend %wrapper-parent;
+    inline-size: 40%;
+  }
+  &__img {
+    @extend %wrapped-img;
+  }
+  &__textwrapper {
+    inline-size: 60%;
+    align-self: center;
+  }
+}
+
+.textlist span {
+  font-weight: $normal;
+}
